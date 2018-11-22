@@ -1,0 +1,5009 @@
+[
+    {
+        "id": "f39be9b2.cf1228",
+        "type": "tab",
+        "label": "SDM630 Modbus Gateway",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "68909380.84f1ec",
+        "type": "tab",
+        "label": "pulsy TCP Modbus",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "9a7d2c71.0549",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "78b0c5cb.4113bc",
+        "type": "tab",
+        "label": "M-Bus_Dashboard",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "f703a540.ffd878",
+        "type": "tab",
+        "label": "Raw MBUS",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "11925b7a.f3ddf5",
+        "type": "tab",
+        "label": "Trigger queue",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "40b3e05e.8fc84",
+        "type": "tab",
+        "label": "Manual reading",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "2b7a79b2.a62516",
+        "type": "tab",
+        "label": "To read",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a1569260.60935",
+        "type": "tab",
+        "label": "Configuration",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "eef48afe.7cbc38",
+        "type": "tab",
+        "label": "UI",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d93a2589.2e6c78",
+        "type": "tab",
+        "label": "HTTP",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f2965746.30b818",
+        "type": "tab",
+        "label": "MQTT",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b1f764b6.c1ed78",
+        "type": "modbus-client",
+        "z": "",
+        "name": "Modbus Flex Server",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "15502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectTimeout": 2000
+    },
+    {
+        "id": "520260a3.ec552",
+        "type": "modbus-client",
+        "z": "",
+        "name": "Modbus Server",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "14502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectTimeout": 2000
+    },
+    {
+        "id": "37da3ea1.d76122",
+        "type": "modbus-client",
+        "z": "f39be9b2.cf1228",
+        "name": "SDM630 Modbus Gateway",
+        "clienttype": "simpleser",
+        "bufferCommands": true,
+        "stateLogEnabled": true,
+        "tcpHost": "192.168.178.16",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/extcomm/0/0",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "4800",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectTimeout": "2000"
+    },
+    {
+        "id": "eb839a0c.c19d68",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "mqtt.flespi.io",
+        "port": "8883",
+        "tls": "7e007c18.423724",
+        "clientid": "",
+        "usetls": true,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "devices/unipi/0014/status",
+        "birthQos": "1",
+        "birthRetain": "true",
+        "birthPayload": "connected",
+        "closeTopic": "devices/unipi/0014/status",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "disconnected (exp)",
+        "willTopic": "devices/unipi/0014/status",
+        "willQos": "1",
+        "willRetain": "true",
+        "willPayload": "disconnected (unexp)"
+    },
+    {
+        "id": "1d7d1495.d3f02b",
+        "type": "websocket-client",
+        "path": "ws://127.0.0.1/ws",
+        "wholemsg": "false"
+    },
+    {
+        "id": "cecb17dc.66cab8",
+        "type": "websocket-client",
+        "path": "ws://127.0.0.1/ws",
+        "wholemsg": "false"
+    },
+    {
+        "id": "dc5bc0ed.dae27",
+        "type": "mqtt-broker",
+        "broker": "iot.eclipse.org",
+        "port": "1883",
+        "clientid": ""
+    },
+    {
+        "id": "9db9e6bb.4dcd68",
+        "type": "unipi",
+        "z": "",
+        "name": "",
+        "host": "127.0.0.1",
+        "restPort": "80",
+        "wsPort": "8080"
+    },
+    {
+        "id": "e32627b9.0a32a8",
+        "type": "unipi",
+        "z": "",
+        "name": "unipi1",
+        "host": "127.0.0.1",
+        "restPort": "8080",
+        "wsPort": "8080"
+    },
+    {
+        "id": "bc0bf1db.c6c0c",
+        "type": "modbus-client",
+        "z": "",
+        "name": "ModbusTCP",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectTimeout": "2000"
+    },
+    {
+        "id": "4ea9c3c8.2ea06c",
+        "type": "mbus-client",
+        "z": "",
+        "name": "",
+        "clienttype": "serial",
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "10001",
+        "tcpTimeout": "4000",
+        "serialPort": "/dev/extcomm/1/0",
+        "serialBaudrate": "2400",
+        "reconnectTimeout": "10000",
+        "autoScan": true,
+        "storeDevices": true,
+        "disableLogs": true
+    },
+    {
+        "id": "9e7545a9.ee8d08",
+        "type": "mbus-client",
+        "z": "",
+        "name": "local",
+        "clienttype": "serial",
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "2000",
+        "serialPort": "/dev/ttyUSB0",
+        "serialBaudrate": "2400",
+        "reconnectTimeout": "10000",
+        "autoScan": true,
+        "storeDevices": true,
+        "disableLogs": true
+    },
+    {
+        "id": "95c6631e.7da56",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard"
+    },
+    {
+        "id": "57b235df.5d13cc",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#1395c6",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#1395c6",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#1395c6",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#39bbec",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#1395c6",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "56bfbc9a.ebf6b4",
+        "type": "serial-port",
+        "z": "",
+        "serialport": "/dev/extcomm/0/0",
+        "serialbaud": "2400",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": false,
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "39a233c6.16bd0c",
+        "type": "modbus-client",
+        "z": "",
+        "name": "",
+        "clienttype": "serial",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectTimeout": 2000
+    },
+    {
+        "id": "c0249855.447748",
+        "type": "modbus-client",
+        "z": "",
+        "name": "RS485",
+        "clienttype": "serial",
+        "bufferCommands": true,
+        "stateLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/extcomm/0/0",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "even",
+        "serialConnectionDelay": "500",
+        "unit_id": "2",
+        "commandDelay": "20",
+        "clientTimeout": "1000",
+        "reconnectTimeout": "2000"
+    },
+    {
+        "id": "8cc2389d.9fdbe8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Read",
+        "tab": "95c6631e.7da56",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "d15a8bf0.8f2b78",
+        "type": "ui_group",
+        "z": "",
+        "name": "System",
+        "tab": "95c6631e.7da56",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "a203973d.f51e68",
+        "type": "ui_group",
+        "z": "",
+        "name": "Real time",
+        "tab": "95c6631e.7da56",
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "7e007c18.423724",
+        "type": "tls-config",
+        "z": "",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": true
+    },
+    {
+        "id": "3dbdccd1.ac5894",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "localhost",
+        "port": "1881",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "1eb4ffa6.76106",
+        "type": "modbus-read",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": true,
+        "unitid": "",
+        "dataType": "InputRegister",
+        "adr": "0",
+        "quantity": "50",
+        "rate": "10000",
+        "rateUnit": "h",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "37da3ea1.d76122",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [],
+            [
+                "96aa0a9.e972ef8",
+                "b1d8de1c.6fae8"
+            ]
+        ]
+    },
+    {
+        "id": "5e5de367.e03f1c",
+        "type": "modbus-response",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "registerShowMax": "1",
+        "x": 450,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "7c4c80f1.cf58",
+        "type": "function",
+        "z": "f39be9b2.cf1228",
+        "name": "extract buffer data",
+        "func": "let voltageL1 = msg.payload.buffer.readFloatBE(0,4) // 1,2\nlet voltageL2 = msg.payload.buffer.readFloatBE(4,4) // 3,4\nlet voltageL3 = msg.payload.buffer.readFloatBE(8,4) // 5,6\n\nlet powerL1 = msg.payload.buffer.readFloatBE(12,4) // 7,8\nlet powerL2 = msg.payload.buffer.readFloatBE(16,4) // 9,10\nlet powerL3 = msg.payload.buffer.readFloatBE(20,4) // 11,12\n\nlet demandL1 = msg.payload.buffer.readFloatBE(24,4) // 13,14\nlet demandL2 = msg.payload.buffer.readFloatBE(28,4) // 15,16\nlet demandL3 = msg.payload.buffer.readFloatBE(32,4) // 17,18\n\nlet voltageAVG = msg.payload.buffer.readFloatBE(84,8) // 43-46\nlet powerAVG = msg.payload.buffer.readFloatBE(92,4) // 47,48\n\nreturn [\n    {\n        payload: {\n            L1: {\n                voltage: voltageL1,\n                power: powerL1,\n                demand: demandL1\n            },\n            L2: {\n                voltage: voltageL2,\n                power: powerL2,\n                demand: demandL2\n            },\n            L3: {\n                voltage: voltageL3,\n                power: powerL3,\n                demand: demandL3\n            },\n            voltageAVG: voltageAVG,\n            powerAVG: powerAVG,            \n        }\n    }\n];",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 450,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2cdf6c1.aea7994",
+        "type": "catch",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "scope": null,
+        "x": 80,
+        "y": 780,
+        "wires": [
+            [
+                "194b15c.7beaaea",
+                "fa723892.81f9a8"
+            ]
+        ]
+    },
+    {
+        "id": "b7186d4e.f0475",
+        "type": "modbus-queue-info",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "topic": "",
+        "unitid": "",
+        "queueReadIntervalTime": "1000",
+        "lowLowLevel": 25,
+        "lowLevel": 75,
+        "highLevel": 150,
+        "highHighLevel": 300,
+        "server": "37da3ea1.d76122",
+        "errorOnHighLevel": false,
+        "x": 570,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "194b15c.7beaaea",
+        "type": "function",
+        "z": "f39be9b2.cf1228",
+        "name": "reset on High",
+        "func": "if(\"high level reached\" === msg.state) {\n    msg.resetQueue = true;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 740,
+        "wires": [
+            [
+                "b7186d4e.f0475"
+            ]
+        ]
+    },
+    {
+        "id": "fa723892.81f9a8",
+        "type": "function",
+        "z": "f39be9b2.cf1228",
+        "name": "reset on HighHigh",
+        "func": "if(\"high high level reached\" === msg.state) {\n    msg.resetQueue = true;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340,
+        "y": 780,
+        "wires": [
+            [
+                "b7186d4e.f0475"
+            ]
+        ]
+    },
+    {
+        "id": "96aa0a9.e972ef8",
+        "type": "function",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "func": "let val = msg.payload.buffer.readFloatBE(24,4) // 7,8\n\n\nreturn [\n    {\n        payload: val\n    }\n];",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 670,
+        "y": 240,
+        "wires": [
+            [
+                "75a16d70.f988a4",
+                "ee2f93bf.bbaf4"
+            ]
+        ]
+    },
+    {
+        "id": "f7e51173.a52da",
+        "type": "mqtt out",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "topic": "testtopickuba/00000001/1/0",
+        "qos": "2",
+        "retain": "false",
+        "broker": "eb839a0c.c19d68",
+        "x": 1320,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "a6590ef1.c799d",
+        "type": "modbus-read",
+        "z": "68909380.84f1ec",
+        "name": "",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "8",
+        "quantity": "1",
+        "rate": "120",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "bc0bf1db.c6c0c",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [],
+            [
+                "f57719c5.b444a8"
+            ]
+        ]
+    },
+    {
+        "id": "f57719c5.b444a8",
+        "type": "change",
+        "z": "68909380.84f1ec",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time_last",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            },
+            {
+                "t": "set",
+                "p": "counter_value_last",
+                "pt": "msg",
+                "to": "payload.data[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 180,
+        "wires": [
+            [
+                "f7c8ddad.4a28a"
+            ]
+        ]
+    },
+    {
+        "id": "4526e1a6.33d72",
+        "type": "change",
+        "z": "68909380.84f1ec",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time_actual",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            },
+            {
+                "t": "set",
+                "p": "counter_value_actual",
+                "pt": "msg",
+                "to": "payload.data[0]",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "complete",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 260,
+        "wires": [
+            [
+                "edb066cc.654698"
+            ]
+        ]
+    },
+    {
+        "id": "f7c8ddad.4a28a",
+        "type": "delay",
+        "z": "68909380.84f1ec",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "16db4bfd.4a8fa4"
+            ]
+        ]
+    },
+    {
+        "id": "edb066cc.654698",
+        "type": "function",
+        "z": "68909380.84f1ec",
+        "name": "calculate power",
+        "func": "var counter_value_actual = msg.counter_value_actual;\nvar counter_value_last = msg.counter_value_last;\nvar time_actual = msg.time_actual;\nvar time_last = msg.time_last;\nvar power_actual = 0;\n\npower_actual = 1000000 * 3600 / 400 * (counter_value_actual-counter_value_last) / (time_actual-time_last);\n\nflow.set(\"counter_value_last\", counter_value_actual);\nflow.set(\"time_last\", time_actual);\n\n\nmsg = { payload: \n        {\n            actualP: power_actual \n        }\n    };\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 440,
+        "wires": [
+            [
+                "2a66397b.8db226"
+            ]
+        ]
+    },
+    {
+        "id": "f2cf66e6.59a978",
+        "type": "mqtt out",
+        "z": "68909380.84f1ec",
+        "name": "",
+        "topic": "testtopickuba/pulsy",
+        "qos": "0",
+        "retain": "true",
+        "broker": "eb839a0c.c19d68",
+        "x": 850,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "2a66397b.8db226",
+        "type": "function",
+        "z": "68909380.84f1ec",
+        "name": "send only power",
+        "func": "let power = msg.payload.actualP;\n\n\nreturn [\n    {\n        payload: power\n    }\n];",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 640,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "16db4bfd.4a8fa4",
+        "type": "modbus-getter",
+        "z": "68909380.84f1ec",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "logIOActivities": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "8",
+        "quantity": "1",
+        "server": "bc0bf1db.c6c0c",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 480,
+        "y": 260,
+        "wires": [
+            [],
+            [
+                "4526e1a6.33d72"
+            ]
+        ]
+    },
+    {
+        "id": "82da8a45.b48c08",
+        "type": "modbus-read",
+        "z": "9a7d2c71.0549",
+        "name": "",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "8",
+        "quantity": "1",
+        "rate": "30",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "bc0bf1db.c6c0c",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 250,
+        "y": 200,
+        "wires": [
+            [],
+            [
+                "ba40b6cd.e3fe28"
+            ]
+        ]
+    },
+    {
+        "id": "ba40b6cd.e3fe28",
+        "type": "rbe",
+        "z": "9a7d2c71.0549",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload.data[0]",
+        "x": 430,
+        "y": 200,
+        "wires": [
+            [
+                "389504da.161dac"
+            ]
+        ]
+    },
+    {
+        "id": "389504da.161dac",
+        "type": "msg-speed",
+        "z": "9a7d2c71.0549",
+        "name": "",
+        "frequency": "min",
+        "estimation": true,
+        "ignore": false,
+        "x": 620,
+        "y": 200,
+        "wires": [
+            [
+                "7e8efdb7.dcd614"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7e8efdb7.dcd614",
+        "type": "change",
+        "z": "9a7d2c71.0549",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload*6/80*1000",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 200,
+        "wires": [
+            [
+                "6fa436d1.23e2b8"
+            ]
+        ]
+    },
+    {
+        "id": "c940b82d.36d3f8",
+        "type": "mqtt out",
+        "z": "9a7d2c71.0549",
+        "name": "",
+        "topic": "testtopickuba/pulsy",
+        "qos": "0",
+        "retain": "true",
+        "broker": "eb839a0c.c19d68",
+        "x": 1290,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6fa436d1.23e2b8",
+        "type": "delay",
+        "z": "9a7d2c71.0549",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 1060,
+        "y": 200,
+        "wires": [
+            [
+                "c940b82d.36d3f8"
+            ]
+        ]
+    },
+    {
+        "id": "cb3ddf92.f3a66",
+        "type": "modbus-getter",
+        "z": "9a7d2c71.0549",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "logIOActivities": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "8",
+        "quantity": "1",
+        "server": "bc0bf1db.c6c0c",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 400,
+        "y": 400,
+        "wires": [
+            [],
+            [
+                "801a86d0.8e9208"
+            ]
+        ]
+    },
+    {
+        "id": "801a86d0.8e9208",
+        "type": "change",
+        "z": "9a7d2c71.0549",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "counter",
+                "pt": "msg",
+                "to": "payload.data[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 400,
+        "wires": [
+            [
+                "b11f0f18.46f"
+            ]
+        ]
+    },
+    {
+        "id": "653a94c1.7acd2c",
+        "type": "inject",
+        "z": "9a7d2c71.0549",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "300",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 190,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e6ff086d.872518",
+        "type": "function",
+        "z": "9a7d2c71.0549",
+        "name": "",
+        "func": "var counter = msg.counter;\nvar time = msg.time;\nmsg = {};\n \nmsg = {\n  \"data\": {\n    \"time\": time,\n    \"state\": counter,\n    \"meter_id\": \"3394\",\n    \"unit\": \"kW\",\n    \"sender\": \"UniPi\",\n    \"suit\": \"default\"\n  }\n}\n\nmsg.headers = {\n    \"Content-Type\": \"application/vnd.api+json\",\n    \"Authorization\": \"Bearer: eyJhbGciOiJFUzI1NiJ9.eyJqaXQiOiJiODAzMWQ5MTM0MDNkNWJmIiwic2NwIjoibGEiLCJ2ZXIiOjEsInN1YiI6IjFlOTNiNzdhLTY0ZGYtNDJiMS04NDRkLTU1ZDFlMTI0YTU0OCJ9.lbvlr-5HDhxDDufGDszkrgIqjwydWcFWbZBOX_1lpzD42V2Wsf00NvCqzMeWja1ZHKqKoRfVtK23O-7e-jvobA\",\n    \"Accept\": \"application/vnd.api+json\"\n  }\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1090,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b11f0f18.46f",
+        "type": "moment",
+        "z": "9a7d2c71.0549",
+        "name": "",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Etc/UTC",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "YYYY-MM-DDTHH:mm:ssZ",
+        "locale": "en_GB",
+        "output": "time",
+        "outputType": "msg",
+        "outTz": "Etc/UTC",
+        "x": 860,
+        "y": 400,
+        "wires": [
+            [
+                "e6ff086d.872518"
+            ]
+        ]
+    },
+    {
+        "id": "6ee0023a.3b072c",
+        "type": "http request",
+        "z": "9a7d2c71.0549",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "url": "https://api.mericitchnologie.cz:41115/readings/1e93b77a-64df-42b1-844d-55d1e124a548",
+        "tls": "",
+        "x": 1250,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e7edb17b.ac7f4",
+        "type": "debug",
+        "z": "9a7d2c71.0549",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1350,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "44e16c84.3f4614",
+        "type": "mbus-out",
+        "z": "78b0c5cb.4113bc",
+        "name": "",
+        "client": "4ea9c3c8.2ea06c",
+        "x": 550,
+        "y": 60,
+        "wires": [
+            [
+                "3e77632c.802d3c"
+            ]
+        ]
+    },
+    {
+        "id": "3e77632c.802d3c",
+        "type": "debug",
+        "z": "78b0c5cb.4113bc",
+        "name": "",
+        "active": false,
+        "console": false,
+        "complete": "false",
+        "x": 1130,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "27bc26a8.1edfda",
+        "type": "mbus-controller",
+        "z": "78b0c5cb.4113bc",
+        "name": "",
+        "client": "4ea9c3c8.2ea06c",
+        "x": 590,
+        "y": 280,
+        "wires": [
+            [
+                "bdabf6b5.6a1478",
+                "2f31d3ea.2bec9c"
+            ]
+        ]
+    },
+    {
+        "id": "bdabf6b5.6a1478",
+        "type": "debug",
+        "z": "78b0c5cb.4113bc",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1130,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "ac339f3c.15eb2",
+        "type": "debug",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1190,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "75a16d70.f988a4",
+        "type": "function",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "func": "var numval = msg.payload;\nmsg.payload = numval.toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 910,
+        "y": 240,
+        "wires": [
+            [
+                "ac339f3c.15eb2"
+            ]
+        ]
+    },
+    {
+        "id": "4d817f1b.e920c",
+        "type": "function",
+        "z": "78b0c5cb.4113bc",
+        "name": "extract volume flow",
+        "func": "var numval = msg.payload.DataRecord[2].Value;\nmsg.payload = numval.toFixed(2)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 850,
+        "y": 360,
+        "wires": [
+            [
+                "57f705e2.43a55c",
+                "10a60e6.b1dfaf2"
+            ]
+        ]
+    },
+    {
+        "id": "57f705e2.43a55c",
+        "type": "mqtt out",
+        "z": "78b0c5cb.4113bc",
+        "name": "",
+        "topic": "testtopickuba/powerL1",
+        "qos": "2",
+        "retain": "true",
+        "broker": "eb839a0c.c19d68",
+        "x": 1160,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "10a60e6.b1dfaf2",
+        "type": "debug",
+        "z": "78b0c5cb.4113bc",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1130,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "8f15e2fa.85694",
+        "type": "inject",
+        "z": "78b0c5cb.4113bc",
+        "name": "Read",
+        "topic": "getDevice",
+        "payload": "{\"address\": \"164\"}",
+        "payloadType": "json",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 90,
+        "y": 280,
+        "wires": [
+            [
+                "27bc26a8.1edfda"
+            ]
+        ]
+    },
+    {
+        "id": "1a70354d.ce732b",
+        "type": "inject",
+        "z": "78b0c5cb.4113bc",
+        "name": "Start scan",
+        "topic": "scan",
+        "payload": "",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 180,
+        "wires": [
+            [
+                "27bc26a8.1edfda"
+            ]
+        ]
+    },
+    {
+        "id": "5b9f24e9.83ad9c",
+        "type": "debug",
+        "z": "78b0c5cb.4113bc",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1130,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "10ba29a9.0c0746",
+        "type": "change",
+        "z": "78b0c5cb.4113bc",
+        "name": "getDevices",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "getDevices",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 560,
+        "wires": [
+            [
+                "386e2f1f.2a292"
+            ]
+        ]
+    },
+    {
+        "id": "b2da0aac.d9c9f8",
+        "type": "mqtt out",
+        "z": "78b0c5cb.4113bc",
+        "name": "",
+        "topic": "testtopickuba/15min",
+        "qos": "2",
+        "retain": "true",
+        "broker": "eb839a0c.c19d68",
+        "x": 1160,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "386e2f1f.2a292",
+        "type": "mbus-controller",
+        "z": "78b0c5cb.4113bc",
+        "name": "",
+        "client": "4ea9c3c8.2ea06c",
+        "x": 590,
+        "y": 560,
+        "wires": [
+            [
+                "b2da0aac.d9c9f8",
+                "5b9f24e9.83ad9c"
+            ]
+        ]
+    },
+    {
+        "id": "a4896465.d16208",
+        "type": "inject",
+        "z": "78b0c5cb.4113bc",
+        "name": "CRON",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "*/5 0-23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 560,
+        "wires": [
+            [
+                "10ba29a9.0c0746"
+            ]
+        ]
+    },
+    {
+        "id": "c2c26c12.87679",
+        "type": "comment",
+        "z": "78b0c5cb.4113bc",
+        "name": "Every 5th minute read all devices",
+        "info": "",
+        "x": 130,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "1220455.7f819bb",
+        "type": "comment",
+        "z": "78b0c5cb.4113bc",
+        "name": "Manual button to scan devices on MBus",
+        "info": "",
+        "x": 150,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "dbbbe88d.1c6258",
+        "type": "comment",
+        "z": "78b0c5cb.4113bc",
+        "name": "Trigger for continuous redout of one meter",
+        "info": "",
+        "x": 160,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "a3b271e7.2632b",
+        "type": "comment",
+        "z": "78b0c5cb.4113bc",
+        "name": "All MBus operations monitoring",
+        "info": "",
+        "x": 630,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "51d7f4ac.1218ac",
+        "type": "exec",
+        "z": "f703a540.ffd878",
+        "command": "mbus-serial-request-data -d -b 2400 /dev/extcomm/0/0 ",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "libmbus request",
+        "x": 660,
+        "y": 100,
+        "wires": [
+            [],
+            [
+                "79f8ae6c.a943d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9249fe04.112fc",
+        "type": "inject",
+        "z": "f703a540.ffd878",
+        "name": "",
+        "topic": "",
+        "payload": "12345678FFFFFFFF",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "49238608.67cc38"
+            ]
+        ]
+    },
+    {
+        "id": "4e99c67e.029db8",
+        "type": "string",
+        "z": "f703a540.ffd878",
+        "name": "",
+        "methods": [
+            {
+                "name": "getRightMost",
+                "params": [
+                    {
+                        "type": "str",
+                        "value": "RECV"
+                    }
+                ]
+            },
+            {
+                "name": "delLeftMost",
+                "params": [
+                    {
+                        "type": "str",
+                        "value": "68"
+                    }
+                ]
+            },
+            {
+                "name": "prepend",
+                "params": [
+                    {
+                        "type": "str",
+                        "value": "68"
+                    }
+                ]
+            },
+            {
+                "name": "strip",
+                "params": [
+                    {
+                        "type": "str",
+                        "value": " "
+                    }
+                ]
+            }
+        ],
+        "prop": "payload",
+        "propout": "payload",
+        "object": "msg",
+        "objectout": "msg",
+        "x": 1050,
+        "y": 100,
+        "wires": [
+            [
+                "b4b3824f.8a9db"
+            ]
+        ]
+    },
+    {
+        "id": "b4b3824f.8a9db",
+        "type": "debug",
+        "z": "f703a540.ffd878",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1270,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "62422617.66e128",
+        "type": "inject",
+        "z": "f703a540.ffd878",
+        "name": "",
+        "topic": "",
+        "payload": "254",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "49238608.67cc38",
+                "64edfafe.c42a04"
+            ]
+        ]
+    },
+    {
+        "id": "861ee4b7.08de88",
+        "type": "inject",
+        "z": "f703a540.ffd878",
+        "name": "",
+        "topic": "",
+        "payload": "FFFFFFFFFFFFFFFF",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "49238608.67cc38"
+            ]
+        ]
+    },
+    {
+        "id": "1c8bc2ad.742a8d",
+        "type": "inject",
+        "z": "f703a540.ffd878",
+        "name": "",
+        "topic": "",
+        "payload": "164",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "49238608.67cc38"
+            ]
+        ]
+    },
+    {
+        "id": "d0345999.bdeb48",
+        "type": "inject",
+        "z": "f703a540.ffd878",
+        "name": "",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 380,
+        "wires": [
+            [
+                "49238608.67cc38"
+            ]
+        ]
+    },
+    {
+        "id": "b12c9e1f.0140b",
+        "type": "inject",
+        "z": "f703a540.ffd878",
+        "name": "",
+        "topic": "",
+        "payload": "98765432FFFFFFFF",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "49238608.67cc38"
+            ]
+        ]
+    },
+    {
+        "id": "89aca7de.648458",
+        "type": "inject",
+        "z": "f703a540.ffd878",
+        "name": "",
+        "topic": "",
+        "payload": "200",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 460,
+        "wires": [
+            [
+                "49238608.67cc38"
+            ]
+        ]
+    },
+    {
+        "id": "7a3c5bc5.83c7d4",
+        "type": "comment",
+        "z": "f703a540.ffd878",
+        "name": "wildcards",
+        "info": "",
+        "x": 100,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "78cb1f6a.92712",
+        "type": "comment",
+        "z": "f703a540.ffd878",
+        "name": "exist",
+        "info": "",
+        "x": 90,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "113adbee.c9f994",
+        "type": "comment",
+        "z": "f703a540.ffd878",
+        "name": "not exist",
+        "info": "",
+        "x": 100,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "79f8ae6c.a943d",
+        "type": "switch",
+        "z": "f703a540.ffd878",
+        "name": "return code",
+        "property": "rc.code",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 850,
+        "y": 100,
+        "wires": [
+            [
+                "4e99c67e.029db8"
+            ],
+            [
+                "9bfdfd95.3cffa"
+            ]
+        ]
+    },
+    {
+        "id": "5a4e0658.a89788",
+        "type": "comment",
+        "z": "f703a540.ffd878",
+        "name": "code: 0 // OK",
+        "info": "",
+        "x": 1070,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b739672.7ef7e98",
+        "type": "comment",
+        "z": "f703a540.ffd878",
+        "name": "code >0 // Error",
+        "info": "",
+        "x": 1080,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "9bfdfd95.3cffa",
+        "type": "debug",
+        "z": "f703a540.ffd878",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "rc",
+        "x": 1050,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "49238608.67cc38",
+        "type": "delay",
+        "z": "f703a540.ffd878",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "5",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 460,
+        "y": 100,
+        "wires": [
+            [
+                "51d7f4ac.1218ac"
+            ]
+        ]
+    },
+    {
+        "id": "2e053da0.2a9b02",
+        "type": "comment",
+        "z": "f703a540.ffd878",
+        "name": "1s is OK for primary addressing, secondary needs longer",
+        "info": "",
+        "x": 550,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "69a2cc1f.78c6f4",
+        "type": "comment",
+        "z": "f703a540.ffd878",
+        "name": "think how to assure separation of different reading techniques",
+        "info": "",
+        "x": 640,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "cab9ffd8.46768",
+        "type": "inject",
+        "z": "78b0c5cb.4113bc",
+        "name": "Read",
+        "topic": "getDevice",
+        "payload": "{\"address\": \"73130497AE4C5207\"}",
+        "payloadType": "json",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 90,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2f31d3ea.2bec9c",
+        "type": "function",
+        "z": "78b0c5cb.4113bc",
+        "name": "extract 0 value",
+        "func": "var numval = msg.payload.DataRecord[0].Value;\nmsg.payload = numval;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 840,
+        "y": 220,
+        "wires": [
+            [
+                "b60e51b7.080e8"
+            ]
+        ]
+    },
+    {
+        "id": "b60e51b7.080e8",
+        "type": "debug",
+        "z": "78b0c5cb.4113bc",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1130,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "fdaa4a0f.812ec8",
+        "type": "comment",
+        "z": "f703a540.ffd878",
+        "name": "buffer with `line-busy` variable",
+        "info": "",
+        "x": 540,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "9a25a529.025b08",
+        "type": "modbus-flex-getter",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "logIOActivities": false,
+        "server": "37da3ea1.d76122",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 430,
+        "y": 360,
+        "wires": [
+            [],
+            [
+                "96aa0a9.e972ef8",
+                "d20f57fc.7715b8"
+            ]
+        ]
+    },
+    {
+        "id": "ee2f93bf.bbaf4",
+        "type": "debug",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 930,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "b1d8de1c.6fae8",
+        "type": "debug",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 690,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "8934d1fe.b3601",
+        "type": "inject",
+        "z": "f39be9b2.cf1228",
+        "name": "Every 15th minute",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "*/15 0-23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 360,
+        "wires": [
+            [
+                "afcd1c64.db4a"
+            ]
+        ]
+    },
+    {
+        "id": "afcd1c64.db4a",
+        "type": "function",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    meterid: '1000',      ENECTIVA IMPORT ID\n//    suit: '0'             ENECTIVA SUIT\n//} \n\nmsg.payload = \n{ \n    value: msg.payload, \n    'fc': 4, \n    'unitid': 1, \n    'address': 0 , \n    'quantity': 50,\n    'meterid': '1000',\n    'suit': '0'\n} \n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 270,
+        "y": 360,
+        "wires": [
+            [
+                "9a25a529.025b08"
+            ]
+        ]
+    },
+    {
+        "id": "d20f57fc.7715b8",
+        "type": "debug",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 670,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f75eaba7.d51438",
+        "type": "modbus-flex-getter",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "logIOActivities": false,
+        "server": "37da3ea1.d76122",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 590,
+        "y": 500,
+        "wires": [
+            [],
+            [
+                "92e66031.7af52",
+                "ee8888ee.3e5908"
+            ]
+        ]
+    },
+    {
+        "id": "3420e3e5.7c139c",
+        "type": "inject",
+        "z": "f39be9b2.cf1228",
+        "name": "Every 5 seconds",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ec12cd5f.1511d",
+        "type": "function",
+        "z": "f39be9b2.cf1228",
+        "name": "Unit 1, Power",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    meterid: '1000',      ENECTIVA IMPORT ID\n//    suit: '0'             ENECTIVA SUIT\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    value: msg.payload, \n    'fc': 4, \n    'unitid': 1, \n    'address': 52 , \n    'quantity': 2,\n    'meterid': '1000',\n    'suit': '0'\n} \n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340,
+        "y": 500,
+        "wires": [
+            [
+                "f75eaba7.d51438"
+            ]
+        ]
+    },
+    {
+        "id": "92e66031.7af52",
+        "type": "function",
+        "z": "f39be9b2.cf1228",
+        "name": "Extract 2 register float BE",
+        "func": "let val = msg.payload.buffer.readFloatBE(0,4);\nlet met = msg.input.payload.unitid;\nlet sui = msg.input.payload.address;\n\nmsg.payload = \n{\n    value: val,\n    time: Date.now(),\n    meterid: met,\n    suit: sui,\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 830,
+        "y": 500,
+        "wires": [
+            [
+                "af0bacd.ffe355",
+                "f7e51173.a52da"
+            ]
+        ]
+    },
+    {
+        "id": "af0bacd.ffe355",
+        "type": "debug",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1050,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "ee8888ee.3e5908",
+        "type": "debug",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 790,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "2514625c.dd126e",
+        "type": "inject",
+        "z": "f39be9b2.cf1228",
+        "name": "Every 15th minute",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "*/15 0-23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6b920fb6.ba9f6",
+        "type": "modbus-flex-getter",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "logIOActivities": false,
+        "server": "37da3ea1.d76122",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 590,
+        "y": 620,
+        "wires": [
+            [],
+            [
+                "1461d607.137d6a",
+                "a41c20c4.fdcb8"
+            ]
+        ]
+    },
+    {
+        "id": "a41c20c4.fdcb8",
+        "type": "function",
+        "z": "f39be9b2.cf1228",
+        "name": "Extract 1 register float BE",
+        "func": "let val = msg.payload.buffer.readFloatBE(0,2) // 7,8\n\n\nreturn [\n    {\n        payload: val\n    }\n];",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 830,
+        "y": 620,
+        "wires": [
+            [
+                "9674dabf.f89b28"
+            ]
+        ]
+    },
+    {
+        "id": "9674dabf.f89b28",
+        "type": "debug",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1070,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "1461d607.137d6a",
+        "type": "debug",
+        "z": "f39be9b2.cf1228",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 810,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "64dd2578.4852ec",
+        "type": "function",
+        "z": "f39be9b2.cf1228",
+        "name": "Unit 1, Energy",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    meterid: '1000',      ENECTIVA IMPORT ID\n//    suit: '0'             ENECTIVA SUIT\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    value: msg.payload, \n    'fc': 4, \n    'unitid': 1, \n    'address': 342, \n    'quantity': 2,\n    'meterid': '1000',\n    'suit': '0'\n} \n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340,
+        "y": 620,
+        "wires": [
+            [
+                "6b920fb6.ba9f6"
+            ]
+        ]
+    },
+    {
+        "id": "2bdc6f4a.c6bb7",
+        "type": "mqtt out",
+        "z": "11925b7a.f3ddf5",
+        "name": "",
+        "topic": "testtopickuba/00000001/1/0",
+        "qos": "2",
+        "retain": "false",
+        "broker": "eb839a0c.c19d68",
+        "x": 1740,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "24b2cac5.d4b796",
+        "type": "modbus-flex-getter",
+        "z": "11925b7a.f3ddf5",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "logIOActivities": false,
+        "server": "c0249855.447748",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 1110,
+        "y": 580,
+        "wires": [
+            [],
+            [
+                "c49b2c69.c2952",
+                "60a44e00.9d1834"
+            ]
+        ]
+    },
+    {
+        "id": "4c653d60.f03414",
+        "type": "inject",
+        "z": "11925b7a.f3ddf5",
+        "name": "Every 5 seconds",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dbe420a5.1f93b",
+        "type": "function",
+        "z": "11925b7a.f3ddf5",
+        "name": "Unit 1, Power",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    'meterid': '1000',    ENECTIVA IMPORT ID\n//    'suit': '0',          ENECTIVA SUIT\n//    'protocol':'modbus',  PROTOCOL (modbus/mbus)\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 4, \n    'unitid': 1, \n    'address': 52 , \n    'quantity': 2,\n    'meterid': '1000',\n    'protocol':'modbus',\n} \n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340,
+        "y": 600,
+        "wires": [
+            [
+                "6203cdfb.09e574"
+            ]
+        ]
+    },
+    {
+        "id": "c49b2c69.c2952",
+        "type": "function",
+        "z": "11925b7a.f3ddf5",
+        "name": "Extract 2 register float BE",
+        "func": "let val = msg.payload.buffer.readFloatBE(0,4);\nlet met = msg.input.payload.meterid;\nlet sui = msg.input.payload.address;\n\nmsg.payload = \n{\n    value: val,\n    time: Date.now(),\n    meterid: met,\n    suit: sui,\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1350,
+        "y": 580,
+        "wires": [
+            [
+                "268c328d.8d56ae"
+            ]
+        ]
+    },
+    {
+        "id": "268c328d.8d56ae",
+        "type": "debug",
+        "z": "11925b7a.f3ddf5",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1590,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "60a44e00.9d1834",
+        "type": "debug",
+        "z": "11925b7a.f3ddf5",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1310,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "75dc4599.f9636c",
+        "type": "inject",
+        "z": "11925b7a.f3ddf5",
+        "name": "Every 15th minute",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "*/15 0-23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5249eea0.72a36",
+        "type": "function",
+        "z": "11925b7a.f3ddf5",
+        "name": "Unit 1, Energy",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    meterid: '1000',      ENECTIVA IMPORT ID\n//    suit: '0'             ENECTIVA SUIT\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 4, \n    'unitid': 1, \n    'address': 342, \n    'quantity': 2,\n    'meterid': '1000',\n    'protocol':'modbus',\n} \n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340,
+        "y": 660,
+        "wires": [
+            [
+                "6203cdfb.09e574"
+            ]
+        ]
+    },
+    {
+        "id": "93ecaaab.e5d018",
+        "type": "switch",
+        "z": "11925b7a.f3ddf5",
+        "name": "MB / MOD / Err",
+        "property": "payload.protocol",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "mbus",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "modbus",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 880,
+        "y": 120,
+        "wires": [
+            [
+                "d62f3c62.687ba",
+                "d1d24c09.42f85"
+            ],
+            [
+                "24b2cac5.d4b796",
+                "82b42df7.97106"
+            ],
+            [
+                "9e8ae11.227252"
+            ]
+        ]
+    },
+    {
+        "id": "bcc3292d.f2cda8",
+        "type": "inject",
+        "z": "11925b7a.f3ddf5",
+        "name": "Every 15th minute",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "*/15 0-23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e5d86ebc.8edd8",
+        "type": "function",
+        "z": "11925b7a.f3ddf5",
+        "name": "Unit 254",
+        "func": "msg.payload = \n{ \n    'address': 164, \n    'index': 0,\n    'meterid': '2000',\n    'protocol':'mbus',\n};\nmsg.topic = 'getDevice';\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 120,
+        "wires": [
+            [
+                "6203cdfb.09e574"
+            ]
+        ]
+    },
+    {
+        "id": "474f04f2.323a6c",
+        "type": "debug",
+        "z": "11925b7a.f3ddf5",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1520,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "9e8ae11.227252",
+        "type": "debug",
+        "z": "11925b7a.f3ddf5",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 850,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "d62f3c62.687ba",
+        "type": "debug",
+        "z": "11925b7a.f3ddf5",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1070,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "82b42df7.97106",
+        "type": "debug",
+        "z": "11925b7a.f3ddf5",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1110,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "d1d24c09.42f85",
+        "type": "change",
+        "z": "11925b7a.f3ddf5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "getDevice",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1150,
+        "y": 100,
+        "wires": [
+            [
+                "132ab744.ba73a9"
+            ]
+        ]
+    },
+    {
+        "id": "6203cdfb.09e574",
+        "type": "delay",
+        "z": "11925b7a.f3ddf5",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "3",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 660,
+        "y": 120,
+        "wires": [
+            [
+                "93ecaaab.e5d018"
+            ]
+        ]
+    },
+    {
+        "id": "64edfafe.c42a04",
+        "type": "exec",
+        "z": "f703a540.ffd878",
+        "command": "mbus-serial-request-data -d -b 2400 /dev/extcomm/1/0 ",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "libmbus request",
+        "x": 660,
+        "y": 240,
+        "wires": [
+            [],
+            [
+                "79f8ae6c.a943d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "132ab744.ba73a9",
+        "type": "exec",
+        "z": "11925b7a.f3ddf5",
+        "command": "mbus-serial-request-data -d -b 2400 /dev/extcomm/1/0  254",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "libmbus request",
+        "x": 1340,
+        "y": 100,
+        "wires": [
+            [],
+            [
+                "474f04f2.323a6c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d5797cb9.4d966",
+        "type": "inject",
+        "z": "11925b7a.f3ddf5",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 1120,
+        "y": 20,
+        "wires": [
+            [
+                "132ab744.ba73a9"
+            ]
+        ]
+    },
+    {
+        "id": "774b5a97.c394d4",
+        "type": "modbus-flex-getter",
+        "z": "40b3e05e.8fc84",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "logIOActivities": false,
+        "server": "c0249855.447748",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 650,
+        "y": 300,
+        "wires": [
+            [],
+            [
+                "b4d7556.ee5f3a8",
+                "e5e46b19.f87638",
+                "bd4ba510.c05378"
+            ]
+        ]
+    },
+    {
+        "id": "bd4ba510.c05378",
+        "type": "function",
+        "z": "40b3e05e.8fc84",
+        "name": "Extract 2 register float BE",
+        "func": "let val = msg.payload.buffer.readFloatBE(0,4);\nlet met = msg.input.payload.value.meterid;\nlet sui = msg.input.payload.address;\n\nmsg.payload = \n{\n    value: val,\n    time: Date.now(),\n    meterid: met,\n    suit: sui,\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1130,
+        "y": 300,
+        "wires": [
+            [
+                "3101f8f1.ddf4d8",
+                "e36cec7e.aaca"
+            ]
+        ]
+    },
+    {
+        "id": "3101f8f1.ddf4d8",
+        "type": "debug",
+        "z": "40b3e05e.8fc84",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1430,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "b4d7556.ee5f3a8",
+        "type": "debug",
+        "z": "40b3e05e.8fc84",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 870,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "291595a9.ea66ea",
+        "type": "inject",
+        "z": "40b3e05e.8fc84",
+        "name": "Every 15th minute",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "*/15 0-23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "df8fb48f.8f2288",
+        "type": "function",
+        "z": "40b3e05e.8fc84",
+        "name": "Unit 1, Energy",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    meterid: '1000',      ENECTIVA IMPORT ID\n//    suit: '0'             ENECTIVA SUIT\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 4, \n    'unitid': 1, \n    'address': 342, \n    'quantity': 2,\n    'meterid': '1000',\n    'protocol':'modbus',\n} \n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b63ec7e7.2364b8",
+        "type": "debug",
+        "z": "a1569260.60935",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 790,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "c29accf9.6f8cb",
+        "type": "inject",
+        "z": "a1569260.60935",
+        "name": "Get UniPI SN",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 520,
+        "wires": [
+            [
+                "4af6e07e.b787c"
+            ]
+        ]
+    },
+    {
+        "id": "4af6e07e.b787c",
+        "type": "http request",
+        "z": "a1569260.60935",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "url": "127.0.0.1:8080/json/neuron/1",
+        "tls": "",
+        "x": 370,
+        "y": 520,
+        "wires": [
+            [
+                "d0ee69b7.381078"
+            ]
+        ]
+    },
+    {
+        "id": "d0ee69b7.381078",
+        "type": "change",
+        "z": "a1569260.60935",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.data.sn",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 520,
+        "wires": [
+            [
+                "b63ec7e7.2364b8"
+            ]
+        ]
+    },
+    {
+        "id": "89b46017.3bb88",
+        "type": "comment",
+        "z": "a1569260.60935",
+        "name": "Get UniPi's SN",
+        "info": "",
+        "x": 160,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "40fd2090.cc3e5",
+        "type": "http request",
+        "z": "a1569260.60935",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "url": "127.0.0.1:8080/json/relay/1_04",
+        "tls": "",
+        "x": 370,
+        "y": 700,
+        "wires": [
+            [
+                "a9e06cc8.0b88c"
+            ]
+        ]
+    },
+    {
+        "id": "b6258dfb.7aa46",
+        "type": "inject",
+        "z": "a1569260.60935",
+        "name": "Set 1",
+        "topic": "",
+        "payload": "{\"value\":\"1\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 700,
+        "wires": [
+            [
+                "40fd2090.cc3e5"
+            ]
+        ]
+    },
+    {
+        "id": "33788b05.4a2964",
+        "type": "inject",
+        "z": "a1569260.60935",
+        "name": "Set 0",
+        "topic": "",
+        "payload": "{\"value\":\"0\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 740,
+        "wires": [
+            [
+                "40fd2090.cc3e5"
+            ]
+        ]
+    },
+    {
+        "id": "a9e06cc8.0b88c",
+        "type": "debug",
+        "z": "a1569260.60935",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 570,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "2ee1146.42375ec",
+        "type": "comment",
+        "z": "a1569260.60935",
+        "name": "Set UniPi's output (LED)",
+        "info": "",
+        "x": 190,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "18388f7a.dac9e1",
+        "type": "inject",
+        "z": "40b3e05e.8fc84",
+        "name": "Every 15th minute",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "*/15 0-23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ee5145fc.66c5b8",
+        "type": "function",
+        "z": "40b3e05e.8fc84",
+        "name": "Unit 1, Energy",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    meterid: '1000',      ENECTIVA IMPORT ID\n//    suit: '0'             ENECTIVA SUIT\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 4, \n    'unitid': 10, \n    'address': 342, \n    'quantity': 2,\n    'meterid': '1000',\n    'protocol':'modbus',\n} \n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bfb0dd22.72a87",
+        "type": "inject",
+        "z": "eef48afe.7cbc38",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 290,
+        "y": 360,
+        "wires": [
+            [
+                "1b2857c4.dd5df8",
+                "43fd6889.e0a428",
+                "243c272f.7c6298",
+                "7e104e24.332b5",
+                "83495e81.60ba6",
+                "9107d56b.c034e8",
+                "fa54d80f.ee8098",
+                "ce5b160a.c400d8",
+                "953e0fb0.b2c9b",
+                "836d3b17.0a61d8"
+            ]
+        ]
+    },
+    {
+        "id": "1b2857c4.dd5df8",
+        "type": "ui_text_input",
+        "z": "eef48afe.7cbc38",
+        "name": "unitid",
+        "label": "Unit ID",
+        "group": "8cc2389d.9fdbe8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "number",
+        "delay": "1",
+        "topic": "unitid",
+        "x": 490,
+        "y": 400,
+        "wires": [
+            [
+                "be91b156.eac2"
+            ]
+        ]
+    },
+    {
+        "id": "43fd6889.e0a428",
+        "type": "ui_text_input",
+        "z": "eef48afe.7cbc38",
+        "name": "address",
+        "label": "Address (start register)",
+        "group": "8cc2389d.9fdbe8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "number",
+        "delay": "1",
+        "topic": "address",
+        "x": 500,
+        "y": 440,
+        "wires": [
+            [
+                "be91b156.eac2"
+            ]
+        ]
+    },
+    {
+        "id": "243c272f.7c6298",
+        "type": "ui_text_input",
+        "z": "eef48afe.7cbc38",
+        "name": "quantity",
+        "label": "Quantity (# of registers to read)",
+        "group": "8cc2389d.9fdbe8",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "number",
+        "delay": "1",
+        "topic": "quantity",
+        "x": 500,
+        "y": 480,
+        "wires": [
+            [
+                "be91b156.eac2"
+            ]
+        ]
+    },
+    {
+        "id": "7e104e24.332b5",
+        "type": "ui_dropdown",
+        "z": "eef48afe.7cbc38",
+        "name": "fc",
+        "label": "Function code",
+        "place": "Select option",
+        "group": "8cc2389d.9fdbe8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "options": [
+            {
+                "label": "",
+                "value": 3,
+                "type": "num"
+            },
+            {
+                "label": "",
+                "value": 4,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "fc",
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "be91b156.eac2"
+            ]
+        ]
+    },
+    {
+        "id": "be91b156.eac2",
+        "type": "function",
+        "z": "eef48afe.7cbc38",
+        "name": "",
+        "func": "// if values don't exist, create it\ncontext.read_fc = context.read_fc || \"3\";\ncontext.read_unitid = context.read_unitid || \"1\";\ncontext.read_address = context.read_address || \"0\";\ncontext.read_quantity = context.read_quantity || \"2\";\ncontext.read_datatype = context.read_datatype || \"float\";\n\nif (msg.topic == \"fc\") {\n    context.read_fc = msg.payload;\n}\nelse if(msg.topic == \"unitid\") {\n    context.read_unitid = msg.payload;\n}\nelse if(msg.topic == \"address\") {\n    context.read_address = msg.payload;\n}\nelse if(msg.topic == \"quantity\") {\n    context.read_quantity = msg.payload;\n}\nelse if(msg.topic == \"datatype\") {\n    flow.set(\"read_datatype\", msg.payload);\n}\n\n\n    // 'datatype': context.read_datatype,\n\nmsg.payload = \n{ \n    'fc': context.read_fc, \n    'unitid': context.read_unitid, \n    'address': context.read_address, \n    'quantity': context.read_quantity,\n} \n\nif(msg.topic == \"trigger_read\") {\n    return msg;\n}\n//else if(msg.topic == \"trigger_write\") {\n//    return [ null, msg ];\n//}\n\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 750,
+        "y": 360,
+        "wires": [
+            [
+                "561bb0d8.85ba",
+                "8ccbb8aa.abf5f8",
+                "977ece0.38bf53"
+            ]
+        ],
+        "outputLabels": [
+            "Read"
+        ]
+    },
+    {
+        "id": "561bb0d8.85ba",
+        "type": "debug",
+        "z": "eef48afe.7cbc38",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 950,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "83495e81.60ba6",
+        "type": "ui_button",
+        "z": "eef48afe.7cbc38",
+        "name": "",
+        "group": "8cc2389d.9fdbe8",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Read",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "trigger_read",
+        "x": 490,
+        "y": 560,
+        "wires": [
+            [
+                "be91b156.eac2"
+            ]
+        ]
+    },
+    {
+        "id": "8ccbb8aa.abf5f8",
+        "type": "modbus-flex-getter",
+        "z": "eef48afe.7cbc38",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "logIOActivities": false,
+        "server": "c0249855.447748",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 970,
+        "y": 360,
+        "wires": [
+            [],
+            [
+                "b8e85310.aded",
+                "9e301a5.74a86e8"
+            ]
+        ]
+    },
+    {
+        "id": "b8e85310.aded",
+        "type": "function",
+        "z": "eef48afe.7cbc38",
+        "name": "",
+        "func": "let val = 0;\ndatatype = flow.get(\"read_datatype\");\n\nif (datatype == \"int32\") {\n    val = msg.payload.buffer.readInt32BE(0,4);\n} else if (datatype == \"float\") {\n    val = msg.payload.buffer.readFloatBE(0,4);\n} else if (datatype == \"hex\") {\n    val = msg.payload.buffer.toString('hex');\n}\n\n// let met = msg.input.payload.meterid;\n// let sui = msg.input.payload.address;\n\nmsg.payload = val;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1230,
+        "y": 360,
+        "wires": [
+            [
+                "1c4a071.7a869f9",
+                "3922637.e0cd09c"
+            ]
+        ]
+    },
+    {
+        "id": "1c4a071.7a869f9",
+        "type": "ui_text",
+        "z": "eef48afe.7cbc38",
+        "group": "8cc2389d.9fdbe8",
+        "order": 7,
+        "width": "8",
+        "height": "1",
+        "name": "",
+        "label": "Value",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1370,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "3bc27321.fc83bc",
+        "type": "exec",
+        "z": "a1569260.60935",
+        "command": "sudo shutdown -r now",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "oldrc": true,
+        "name": "",
+        "x": 620,
+        "y": 940,
+        "wires": [
+            [
+                "bdfd30be.40d2"
+            ],
+            [
+                "13cc53a7.2bf30c"
+            ],
+            [
+                "4220bbd7.df31b4"
+            ]
+        ]
+    },
+    {
+        "id": "97dba4de.5420f8",
+        "type": "inject",
+        "z": "a1569260.60935",
+        "name": "Reboot",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 940,
+        "wires": [
+            [
+                "3bc27321.fc83bc"
+            ]
+        ]
+    },
+    {
+        "id": "bdfd30be.40d2",
+        "type": "debug",
+        "z": "a1569260.60935",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 910,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "13cc53a7.2bf30c",
+        "type": "debug",
+        "z": "a1569260.60935",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 910,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "4220bbd7.df31b4",
+        "type": "debug",
+        "z": "a1569260.60935",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 910,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "1776213b.87b5ef",
+        "type": "inject",
+        "z": "40b3e05e.8fc84",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 300,
+        "wires": [
+            [
+                "d1e184f6.5e9828"
+            ]
+        ]
+    },
+    {
+        "id": "d1e184f6.5e9828",
+        "type": "function",
+        "z": "40b3e05e.8fc84",
+        "name": "Unit 2",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    meterid: '1000',      ENECTIVA IMPORT ID\n//    suit: '0'             ENECTIVA SUIT\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 4, \n    'unitid': 2, \n    'address': 112, \n    'quantity': 100,\n} \n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 330,
+        "y": 300,
+        "wires": [
+            [
+                "774b5a97.c394d4"
+            ]
+        ]
+    },
+    {
+        "id": "ee442849.3782f8",
+        "type": "function",
+        "z": "40b3e05e.8fc84",
+        "name": "Extract 2 register int32 BE",
+        "func": "let val = msg.payload.buffer.readInt32BE(0,4);\nlet met = msg.input.payload.value.metrid;\nlet sui = msg.input.payload.address;\n\nmsg.payload = \n{\n    value: val,\n    time: Date.now(),\n    meterid: met,\n    suit: sui,\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1130,
+        "y": 240,
+        "wires": [
+            [
+                "8f0afe16.7c778",
+                "e36cec7e.aaca"
+            ]
+        ]
+    },
+    {
+        "id": "8f0afe16.7c778",
+        "type": "debug",
+        "z": "40b3e05e.8fc84",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1430,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9107d56b.c034e8",
+        "type": "ui_dropdown",
+        "z": "eef48afe.7cbc38",
+        "name": "datatype",
+        "label": "Data type",
+        "place": "Select option",
+        "group": "8cc2389d.9fdbe8",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "options": [
+            {
+                "label": "Int32 BE",
+                "value": "int32",
+                "type": "str"
+            },
+            {
+                "label": "Float BE",
+                "value": "float",
+                "type": "str"
+            },
+            {
+                "label": "Raw HEX",
+                "value": "hex",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "datatype",
+        "x": 500,
+        "y": 520,
+        "wires": [
+            [
+                "be91b156.eac2"
+            ]
+        ]
+    },
+    {
+        "id": "9e301a5.74a86e8",
+        "type": "debug",
+        "z": "eef48afe.7cbc38",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1230,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "47bfec6d.9ed6e4",
+        "type": "inject",
+        "z": "40b3e05e.8fc84",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 360,
+        "wires": [
+            [
+                "dac1993c.0baa28",
+                "d8acbbe4.59ea68",
+                "b5d352f8.c97d7"
+            ]
+        ]
+    },
+    {
+        "id": "dac1993c.0baa28",
+        "type": "function",
+        "z": "40b3e05e.8fc84",
+        "name": "Unit 3, Power",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    'meterid': '1000',    ENECTIVA IMPORT ID\n//    'suit': '0',          ENECTIVA SUIT\n//    'protocol':'modbus',  PROTOCOL (modbus/mbus)\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 4, \n    'unitid': 3, \n    'address': 70, \n    'quantity': 2,\n} \n\nmsg.payload.value = { 'datatype': 'float', 'meterid': 81721383,};\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 360,
+        "wires": [
+            [
+                "774b5a97.c394d4"
+            ]
+        ]
+    },
+    {
+        "id": "a9d107d1.a77478",
+        "type": "modbus-queue-info",
+        "z": "40b3e05e.8fc84",
+        "name": "",
+        "topic": "",
+        "unitid": "",
+        "queueReadIntervalTime": 1000,
+        "lowLowLevel": 25,
+        "lowLevel": 75,
+        "highLevel": 150,
+        "highHighLevel": 300,
+        "server": "b1f764b6.c1ed78",
+        "errorOnHighLevel": false,
+        "x": 630,
+        "y": 500,
+        "wires": [
+            [
+                "b4d7556.ee5f3a8"
+            ]
+        ]
+    },
+    {
+        "id": "e5e46b19.f87638",
+        "type": "modbus-response",
+        "z": "40b3e05e.8fc84",
+        "name": "",
+        "registerShowMax": 20,
+        "x": 1090,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "d8acbbe4.59ea68",
+        "type": "function",
+        "z": "40b3e05e.8fc84",
+        "name": "Unit 1, Power",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    'meterid': '1000',    ENECTIVA IMPORT ID\n//    'suit': '0',          ENECTIVA SUIT\n//    'protocol':'modbus',  PROTOCOL (modbus/mbus)\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 3, \n    'unitid': 1, \n    'address': 8224, \n    'quantity': 2,\n} \n\nmsg.payload.value = { 'datatype': 'float', 'meterid': 18070292,};\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 400,
+        "wires": [
+            [
+                "774b5a97.c394d4"
+            ]
+        ]
+    },
+    {
+        "id": "fc177cd6.dec2c",
+        "type": "function",
+        "z": "40b3e05e.8fc84",
+        "name": "Extract 2 register HEX",
+        "func": "let val = msg.payload.buffer.toString('hex');\nlet met = msg.input.payload.meterid;\nlet sui = msg.input.payload.address;\n\nmsg.payload = \n{\n    value: val,\n    time: Date.now(),\n    meterid: met,\n    suit: sui,\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1120,
+        "y": 180,
+        "wires": [
+            [
+                "75efbd5a.227904"
+            ]
+        ]
+    },
+    {
+        "id": "75efbd5a.227904",
+        "type": "debug",
+        "z": "40b3e05e.8fc84",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1430,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "3922637.e0cd09c",
+        "type": "debug",
+        "z": "eef48afe.7cbc38",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1370,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "977ece0.38bf53",
+        "type": "ui_text",
+        "z": "eef48afe.7cbc38",
+        "group": "8cc2389d.9fdbe8",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Request",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 940,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "fa54d80f.ee8098",
+        "type": "ui_button",
+        "z": "eef48afe.7cbc38",
+        "name": "",
+        "group": "d15a8bf0.8f2b78",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reboot",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 500,
+        "y": 700,
+        "wires": [
+            [
+                "6c682666.7d7ef8"
+            ]
+        ]
+    },
+    {
+        "id": "6c682666.7d7ef8",
+        "type": "link out",
+        "z": "eef48afe.7cbc38",
+        "name": "Reboot",
+        "links": [
+            "94bfae73.a69de"
+        ],
+        "x": 715,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "94bfae73.a69de",
+        "type": "link in",
+        "z": "a1569260.60935",
+        "name": "",
+        "links": [
+            "6c682666.7d7ef8"
+        ],
+        "x": 175,
+        "y": 900,
+        "wires": [
+            [
+                "3bc27321.fc83bc"
+            ]
+        ]
+    },
+    {
+        "id": "ce5b160a.c400d8",
+        "type": "ui_button",
+        "z": "eef48afe.7cbc38",
+        "name": "",
+        "group": "d15a8bf0.8f2b78",
+        "order": 3,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Open ngrok SSH",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 530,
+        "y": 740,
+        "wires": [
+            [
+                "ee717e70.92ae"
+            ]
+        ]
+    },
+    {
+        "id": "953e0fb0.b2c9b",
+        "type": "ui_button",
+        "z": "eef48afe.7cbc38",
+        "name": "",
+        "group": "d15a8bf0.8f2b78",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Kill ngrok SSH",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 520,
+        "y": 780,
+        "wires": [
+            [
+                "1c505c7c.9ecd34"
+            ]
+        ]
+    },
+    {
+        "id": "ee717e70.92ae",
+        "type": "link out",
+        "z": "eef48afe.7cbc38",
+        "name": "Open ngrok",
+        "links": [
+            "c03ffb31.4f9cd8"
+        ],
+        "x": 715,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "1c505c7c.9ecd34",
+        "type": "link out",
+        "z": "eef48afe.7cbc38",
+        "name": "Kill ngrok",
+        "links": [
+            "8ddc30eb.d122d"
+        ],
+        "x": 715,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "836d3b17.0a61d8",
+        "type": "http request",
+        "z": "eef48afe.7cbc38",
+        "name": "SN",
+        "method": "GET",
+        "ret": "obj",
+        "url": "127.0.0.1:8080/json/neuron/1",
+        "tls": "",
+        "x": 490,
+        "y": 660,
+        "wires": [
+            [
+                "9aa70d91.bcbbb"
+            ]
+        ]
+    },
+    {
+        "id": "9aa70d91.bcbbb",
+        "type": "change",
+        "z": "eef48afe.7cbc38",
+        "name": "SN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.data.sn",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 660,
+        "wires": [
+            [
+                "fc81e9c5.f549a8"
+            ]
+        ]
+    },
+    {
+        "id": "fc81e9c5.f549a8",
+        "type": "ui_text",
+        "z": "eef48afe.7cbc38",
+        "group": "d15a8bf0.8f2b78",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "UniPi SN",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 760,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "e36cec7e.aaca",
+        "type": "link out",
+        "z": "40b3e05e.8fc84",
+        "name": "",
+        "links": [
+            "cbf60093.5d493"
+        ],
+        "x": 1375,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "54a563.a44f4a9c",
+        "type": "comment",
+        "z": "40b3e05e.8fc84",
+        "name": "Skrz flex getter prochazi pouze topic, payload.value a parametry modbus",
+        "info": "Skrz flex getter prochazi pouze topic, payload.value a parametry modbus",
+        "x": 700,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "cd37cf91.0be31",
+        "type": "ui_text",
+        "z": "eef48afe.7cbc38",
+        "group": "d15a8bf0.8f2b78",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "ngrok status",
+        "label": "ngrok status",
+        "format": "{{msg.status.text}}",
+        "layout": "row-spread",
+        "x": 710,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "5912e0d3.dc5c3",
+        "type": "link in",
+        "z": "eef48afe.7cbc38",
+        "name": "ngrok status",
+        "links": [
+            "eddf1814.12a368"
+        ],
+        "x": 455,
+        "y": 820,
+        "wires": [
+            [
+                "cd37cf91.0be31"
+            ]
+        ]
+    },
+    {
+        "id": "4b3f19ae.313b98",
+        "type": "link out",
+        "z": "40b3e05e.8fc84",
+        "name": "modbus flex status",
+        "links": [
+            "699575e8.08586c"
+        ],
+        "x": 775,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "177fe7da.d95e28",
+        "type": "status",
+        "z": "40b3e05e.8fc84",
+        "name": "",
+        "scope": [
+            "774b5a97.c394d4"
+        ],
+        "x": 620,
+        "y": 640,
+        "wires": [
+            [
+                "4b3f19ae.313b98"
+            ]
+        ]
+    },
+    {
+        "id": "ca2bb67b.d63a58",
+        "type": "ui_text",
+        "z": "eef48afe.7cbc38",
+        "group": "d15a8bf0.8f2b78",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "modbus status",
+        "label": "Modbus status",
+        "format": "{{msg.status.text}}",
+        "layout": "row-spread",
+        "x": 720,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "699575e8.08586c",
+        "type": "link in",
+        "z": "eef48afe.7cbc38",
+        "name": "ngrok status",
+        "links": [
+            "4b3f19ae.313b98"
+        ],
+        "x": 455,
+        "y": 860,
+        "wires": [
+            [
+                "ca2bb67b.d63a58"
+            ]
+        ]
+    },
+    {
+        "id": "b5d352f8.c97d7",
+        "type": "function",
+        "z": "40b3e05e.8fc84",
+        "name": "Unit 2, Volume Residia",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    'meterid': '1000',    ENECTIVA IMPORT ID\n//    'suit': '0',          ENECTIVA SUIT\n//    'protocol':'modbus',  PROTOCOL (modbus/mbus)\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 4, \n    'unitid': 2, \n    'address': 23, \n    'quantity': 2,\n} \n\nmsg.payload.value = { 'datatype': 'float', 'meterid': 73130497,};\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 380,
+        "y": 440,
+        "wires": [
+            [
+                "774b5a97.c394d4"
+            ]
+        ]
+    },
+    {
+        "id": "b7848e26.fdbab",
+        "type": "debug",
+        "z": "40b3e05e.8fc84",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1070,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "27774aa0.975216",
+        "type": "http request",
+        "z": "d93a2589.2e6c78",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "url": "https://api.mericitechnologie.cz/readings/1e93b77a-64df-42b1-844d-55d1e124a548",
+        "tls": "",
+        "x": 1250,
+        "y": 240,
+        "wires": [
+            [
+                "b61ac89b.f27b78",
+                "e2de9695.480fd8"
+            ]
+        ]
+    },
+    {
+        "id": "ace60965.062c28",
+        "type": "modbus-flex-getter",
+        "z": "d93a2589.2e6c78",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "logIOActivities": false,
+        "server": "c0249855.447748",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 370,
+        "y": 240,
+        "wires": [
+            [],
+            [
+                "b85ea2cb.450bb",
+                "327dd5ee.b933aa"
+            ]
+        ]
+    },
+    {
+        "id": "b85ea2cb.450bb",
+        "type": "function",
+        "z": "d93a2589.2e6c78",
+        "name": "Extract 32bit",
+        "func": "if (msg.input.payload.value.datatype == \"int32\") {\n    val = msg.payload.buffer.readInt32BE(0,4);\n} else if (msg.input.payload.value.datatype == \"float\") {\n    val = msg.payload.buffer.readFloatBE(0,4);\n} else if (msg.input.payload.value.datatype == \"hex\") {\n    val = msg.payload.buffer.toString('hex');\n}\n\nlet met = msg.input.payload.value.meterid;\nlet sui = msg.input.payload.address;\n\nmsg = {};\n\nmsg.payload = \n{\n    'value': val,\n    'time': Date.now(),\n    'meterid': met,\n    'suit': sui,\n};\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 590,
+        "y": 240,
+        "wires": [
+            [
+                "4e8efae5.5a88a4",
+                "77b0d028.4cdc1"
+            ]
+        ]
+    },
+    {
+        "id": "fb2a5208.801f3",
+        "type": "debug",
+        "z": "d93a2589.2e6c78",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1030,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "4e8efae5.5a88a4",
+        "type": "function",
+        "z": "d93a2589.2e6c78",
+        "name": "Prepare HTTP request",
+        "func": "// PAYLOAD EXAMPLE:\n// msg.payload = {\n//     \"value\": 0.131,\n//     \"time\": 1542296316217,\n//     \"meterid\": 73130497,\n//     \"suit\": 23,\n// };\n\nincoming_message = msg.payload;\nmsg = {};\n\n\nISOtimeObj = new Date(incoming_message.time);\nISOtime = ISOtimeObj.toISOString();\n\nmsg.headers = {\n    'Content-Type': 'application/vnd.api+json',\n    'Authorization': 'Bearer: eyJhbGciOiJFUzI1NiJ9.eyJqaXQiOiJiODAzMWQ5MTM0MDNkNWJmIiwic2NwIjoibGEiLCJ2ZXIiOjEsInN1YiI6IjFlOTNiNzdhLTY0ZGYtNDJiMS04NDRkLTU1ZDFlMTI0YTU0OCJ9.lbvlr-5HDhxDDufGDszkrgIqjwydWcFWbZBOX_1lpzD42V2Wsf00NvCqzMeWja1ZHKqKoRfVtK23O-7e-jvobA',\n    'Accept': 'application/vnd.api+json'\n}\n\nmsg.payload = {\n    \"data\": {\n        \"time\": ISOtime,\n        \"state\": incoming_message.value,\n        \"meter_id\": incoming_message.meterid.toString(),\n        \"sender\": \"unipi\",\n        \"suit\": incoming_message.suit.toString()\n    }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 820,
+        "y": 240,
+        "wires": [
+            [
+                "fb2a5208.801f3",
+                "15fe7fbc.a38ca"
+            ]
+        ]
+    },
+    {
+        "id": "77b0d028.4cdc1",
+        "type": "debug",
+        "z": "d93a2589.2e6c78",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 770,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "b61ac89b.f27b78",
+        "type": "debug",
+        "z": "d93a2589.2e6c78",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1430,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "327dd5ee.b933aa",
+        "type": "debug",
+        "z": "d93a2589.2e6c78",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 570,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a1d27e9d.39074",
+        "type": "link in",
+        "z": "eef48afe.7cbc38",
+        "name": "HTTP requests in last hour",
+        "links": [
+            "3db28c.db6a0d74",
+            "23f094d9.5a85ac",
+            "9a2e24b4.64f0a8"
+        ],
+        "x": 455,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e2de9695.480fd8",
+        "type": "switch",
+        "z": "d93a2589.2e6c78",
+        "name": "",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "201",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1430,
+        "y": 180,
+        "wires": [
+            [
+                "bcc7f58d.bec918",
+                "267d7d74.07bab2"
+            ],
+            [
+                "5ecb5030.ef29",
+                "c8e3c8e.5e5b738"
+            ]
+        ]
+    },
+    {
+        "id": "bcc7f58d.bec918",
+        "type": "msg-speed",
+        "z": "d93a2589.2e6c78",
+        "name": "",
+        "frequency": "hour",
+        "estimation": true,
+        "ignore": false,
+        "x": 1650,
+        "y": 100,
+        "wires": [
+            [
+                "78db402b.83ff3"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5ecb5030.ef29",
+        "type": "msg-speed",
+        "z": "d93a2589.2e6c78",
+        "name": "",
+        "frequency": "hour",
+        "estimation": true,
+        "ignore": false,
+        "x": 1650,
+        "y": 140,
+        "wires": [
+            [
+                "9a881d8c.6a0e3"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "78db402b.83ff3",
+        "type": "change",
+        "z": "d93a2589.2e6c78",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "'201'",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1850,
+        "y": 100,
+        "wires": [
+            [
+                "23f094d9.5a85ac"
+            ]
+        ]
+    },
+    {
+        "id": "9a881d8c.6a0e3",
+        "type": "change",
+        "z": "d93a2589.2e6c78",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "'not 201'",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1850,
+        "y": 140,
+        "wires": [
+            [
+                "23f094d9.5a85ac"
+            ]
+        ]
+    },
+    {
+        "id": "23f094d9.5a85ac",
+        "type": "link out",
+        "z": "d93a2589.2e6c78",
+        "name": "HTTP requests in last hour",
+        "links": [
+            "a1d27e9d.39074"
+        ],
+        "x": 1955,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "267d7d74.07bab2",
+        "type": "debug",
+        "z": "d93a2589.2e6c78",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1630,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "c8e3c8e.5e5b738",
+        "type": "debug",
+        "z": "d93a2589.2e6c78",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1630,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "15fe7fbc.a38ca",
+        "type": "delay",
+        "z": "d93a2589.2e6c78",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1050,
+        "y": 240,
+        "wires": [
+            [
+                "27774aa0.975216"
+            ]
+        ]
+    },
+    {
+        "id": "39ba2d2.9d0cad2",
+        "type": "modbus-flex-getter",
+        "z": "f2965746.30b818",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "logIOActivities": false,
+        "server": "c0249855.447748",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "x": 350,
+        "y": 100,
+        "wires": [
+            [],
+            [
+                "981ed6a0.83a1d8",
+                "437143fa.17bbac"
+            ]
+        ]
+    },
+    {
+        "id": "981ed6a0.83a1d8",
+        "type": "function",
+        "z": "f2965746.30b818",
+        "name": "Extract 32bit",
+        "func": "if (msg.input.payload.value.datatype == \"int32\") {\n    val = msg.payload.buffer.readInt32BE(0,4);\n} else if (msg.input.payload.value.datatype == \"float\") {\n    val = msg.payload.buffer.readFloatBE(0,4);\n} else if (msg.input.payload.value.datatype == \"hex\") {\n    val = msg.payload.buffer.toString('hex');\n}\n\nlet met = msg.input.payload.value.meterid;\nlet sui = msg.input.payload.address;\n\nmsg = {};\n\nmsg.payload = \n{\n    'value': val,\n    'time': Date.now(),\n    'meterid': met,\n    'suit': sui\n};\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 570,
+        "y": 100,
+        "wires": [
+            [
+                "12d65ecc.714c31",
+                "cbe8f91a.c27c58"
+            ]
+        ]
+    },
+    {
+        "id": "d8d2d2fc.c00cf",
+        "type": "debug",
+        "z": "f2965746.30b818",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1010,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "12d65ecc.714c31",
+        "type": "function",
+        "z": "f2965746.30b818",
+        "name": "Prepare MQTT",
+        "func": "incoming_message = msg.payload;\nmsg = {};\n\n\ncust_uuid = global.get('cust_uuid');\n\nsuit = incoming_message.suit.toString();\nmeter_id = incoming_message.meterid.toString();\n\nmsg.payload = {\n    \"time\": incoming_message.time,\n    \"state\": incoming_message.value,\n}\n\nmsg.topic = 'data_point/' + cust_uuid + '/' + meter_id + '/' + suit;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 780,
+        "y": 100,
+        "wires": [
+            [
+                "d8d2d2fc.c00cf",
+                "2483fc0d.9b3d64"
+            ]
+        ]
+    },
+    {
+        "id": "cbe8f91a.c27c58",
+        "type": "debug",
+        "z": "f2965746.30b818",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 750,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "437143fa.17bbac",
+        "type": "debug",
+        "z": "f2965746.30b818",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 550,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "2483fc0d.9b3d64",
+        "type": "mqtt out",
+        "z": "f2965746.30b818",
+        "name": "",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "broker": "eb839a0c.c19d68",
+        "x": 1010,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "8d3d2389.337eb",
+        "type": "status",
+        "z": "f2965746.30b818",
+        "name": "",
+        "scope": [
+            "2483fc0d.9b3d64"
+        ],
+        "x": 1000,
+        "y": 240,
+        "wires": [
+            [
+                "f207e00c.030f8",
+                "c0b6d4fa.09b7f8"
+            ]
+        ]
+    },
+    {
+        "id": "f207e00c.030f8",
+        "type": "link out",
+        "z": "f2965746.30b818",
+        "name": "MQTT status",
+        "links": [
+            "de6d15b4.c23418"
+        ],
+        "x": 1135,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "de6d15b4.c23418",
+        "type": "link in",
+        "z": "eef48afe.7cbc38",
+        "name": "ngrok status",
+        "links": [
+            "f207e00c.030f8"
+        ],
+        "x": 455,
+        "y": 900,
+        "wires": [
+            [
+                "88aee82.c8fec18",
+                "cca5f100.d9a9b"
+            ]
+        ]
+    },
+    {
+        "id": "88aee82.c8fec18",
+        "type": "ui_text",
+        "z": "eef48afe.7cbc38",
+        "group": "d15a8bf0.8f2b78",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "mqtt status",
+        "label": "MQTT status",
+        "format": "{{msg.status.text}}",
+        "layout": "row-spread",
+        "x": 710,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "30e48c1d.09e7b4",
+        "type": "ui_chart",
+        "z": "eef48afe.7cbc38",
+        "name": "",
+        "group": "a203973d.f51e68",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "step",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 810,
+        "y": 940,
+        "wires": [
+            [
+                "540f566f.fd1518"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c0b6d4fa.09b7f8",
+        "type": "debug",
+        "z": "f2965746.30b818",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1170,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "cca5f100.d9a9b",
+        "type": "function",
+        "z": "eef48afe.7cbc38",
+        "name": "",
+        "func": "if (msg.topic != \"ticker\") {\n    if (msg.status.text == \"node-red:common.status.connected\") {\n        context.mqttstatus = '1';\n    } else {\n        context.mqttstatus = '0';\n    }\n} else {\n    msg = {\n        'payload' : context.mqttstatus,\n    }\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 690,
+        "y": 940,
+        "wires": [
+            [
+                "30e48c1d.09e7b4",
+                "3b064865.351488"
+            ]
+        ]
+    },
+    {
+        "id": "3b064865.351488",
+        "type": "debug",
+        "z": "eef48afe.7cbc38",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 830,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "7cc3e06b.db98f",
+        "type": "inject",
+        "z": "eef48afe.7cbc38",
+        "name": "ticker",
+        "topic": "ticker",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 490,
+        "y": 940,
+        "wires": [
+            [
+                "cca5f100.d9a9b"
+            ]
+        ]
+    },
+    {
+        "id": "540f566f.fd1518",
+        "type": "debug",
+        "z": "eef48afe.7cbc38",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1010,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "98966a8c.df52e8",
+        "type": "function",
+        "z": "a1569260.60935",
+        "name": "",
+        "func": "if (msg.payload == \"kill\") {\n    return {\"kill\":\"\"};\n} else if (!isNaN(msg.payload)) {\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 470,
+        "y": 1180,
+        "wires": [
+            [
+                "d98300b0.15bfd"
+            ]
+        ]
+    },
+    {
+        "id": "d98300b0.15bfd",
+        "type": "exec",
+        "z": "a1569260.60935",
+        "command": "lt -p",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "oldrc": true,
+        "name": "localtunnel",
+        "x": 610,
+        "y": 1180,
+        "wires": [
+            [
+                "180c06c7.e2b1a9",
+                "25ccc5b8.de24fa"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "180c06c7.e2b1a9",
+        "type": "debug",
+        "z": "a1569260.60935",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 970,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "25ccc5b8.de24fa",
+        "type": "mqtt out",
+        "z": "a1569260.60935",
+        "name": "",
+        "topic": "devices/unipi/0014/localtunnel/status",
+        "qos": "1",
+        "retain": "false",
+        "broker": "eb839a0c.c19d68",
+        "x": 1050,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "481396e4.3b0fa8",
+        "type": "mqtt in",
+        "z": "a1569260.60935",
+        "name": "",
+        "topic": "devices/unipi/0014/localtunnel/control",
+        "qos": "1",
+        "broker": "eb839a0c.c19d68",
+        "x": 250,
+        "y": 1180,
+        "wires": [
+            [
+                "98966a8c.df52e8"
+            ]
+        ]
+    },
+    {
+        "id": "3f3b25bc.736daa",
+        "type": "debug",
+        "z": "a1569260.60935",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 790,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "dee6e0e.58c7d2",
+        "type": "inject",
+        "z": "a1569260.60935",
+        "name": "Get PI temperature",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 190,
+        "y": 620,
+        "wires": [
+            [
+                "4f591980.fe1568"
+            ]
+        ]
+    },
+    {
+        "id": "4f591980.fe1568",
+        "type": "exec",
+        "z": "a1569260.60935",
+        "command": "/opt/vc/bin/vcgencmd measure_temp",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "measure_temp",
+        "x": 380,
+        "y": 620,
+        "wires": [
+            [
+                "3f3b25bc.736daa"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "36fbbfda.2b69e",
+        "type": "function",
+        "z": "a1569260.60935",
+        "name": "",
+        "func": "if (msg.payload == \"kill\") {\n    return {\"kill\":\"\"};\n} else {\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 470,
+        "y": 1420,
+        "wires": [
+            [
+                "5f7d0de8.cd4794"
+            ]
+        ]
+    },
+    {
+        "id": "829c8dbc.0008d",
+        "type": "debug",
+        "z": "a1569260.60935",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 970,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "ad815a01.16a668",
+        "type": "mqtt out",
+        "z": "a1569260.60935",
+        "name": "",
+        "topic": "devices/unipi/0014/ngrok/status",
+        "qos": "1",
+        "retain": "false",
+        "broker": "eb839a0c.c19d68",
+        "x": 1030,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "b5346178.99c03",
+        "type": "mqtt in",
+        "z": "a1569260.60935",
+        "name": "",
+        "topic": "devices/unipi/0014/ngrok/control",
+        "qos": "1",
+        "broker": "eb839a0c.c19d68",
+        "x": 230,
+        "y": 1420,
+        "wires": [
+            [
+                "36fbbfda.2b69e"
+            ]
+        ]
+    },
+    {
+        "id": "5f7d0de8.cd4794",
+        "type": "exec",
+        "z": "a1569260.60935",
+        "command": " ./ngrok tcp ",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "oldrc": true,
+        "name": "NGROK exec",
+        "x": 620,
+        "y": 1420,
+        "wires": [
+            [
+                "ad815a01.16a668",
+                "829c8dbc.0008d"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "cc0973f.4ae339",
+        "type": "comment",
+        "z": "a1569260.60935",
+        "name": "Get UniPi's temperature",
+        "info": "",
+        "x": 180,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "dfef44f2.11f8e8",
+        "type": "comment",
+        "z": "a1569260.60935",
+        "name": "Open tunnel thru ngrok. In ngrok admin, IP+port can be obtained. USAGE: send `[protocol] [port_number]` e.g. `tcp 22` to specified topic",
+        "info": "",
+        "x": 550,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "8e90f4b8.391958",
+        "type": "comment",
+        "z": "a1569260.60935",
+        "name": "Open tunnel thru localtunnel. URL is returned to `/status` topic. USAGE: send `[port_number]` to specified topic",
+        "info": "",
+        "x": 470,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "1dc3eb53.2dab05",
+        "type": "status",
+        "z": "a1569260.60935",
+        "name": "",
+        "scope": [
+            "5f7d0de8.cd4794"
+        ],
+        "x": 600,
+        "y": 1480,
+        "wires": [
+            [
+                "7a2dd4d7.8c086c"
+            ]
+        ]
+    },
+    {
+        "id": "b1712487.c7c898",
+        "type": "status",
+        "z": "a1569260.60935",
+        "name": "",
+        "scope": [
+            "d98300b0.15bfd"
+        ],
+        "x": 600,
+        "y": 1240,
+        "wires": [
+            [
+                "f68aef22.0758a"
+            ]
+        ]
+    },
+    {
+        "id": "5e240959.224028",
+        "type": "mqtt in",
+        "z": "a1569260.60935",
+        "name": "",
+        "topic": "devices/unipi/0014/reboot",
+        "qos": "1",
+        "broker": "eb839a0c.c19d68",
+        "x": 210,
+        "y": 980,
+        "wires": [
+            [
+                "e7aaec57.055a5"
+            ]
+        ]
+    },
+    {
+        "id": "f68aef22.0758a",
+        "type": "function",
+        "z": "a1569260.60935",
+        "name": "",
+        "func": "msg.payload = msg.status.text;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 770,
+        "y": 1240,
+        "wires": [
+            [
+                "25ccc5b8.de24fa",
+                "180c06c7.e2b1a9"
+            ]
+        ]
+    },
+    {
+        "id": "7a2dd4d7.8c086c",
+        "type": "function",
+        "z": "a1569260.60935",
+        "name": "",
+        "func": "msg.payload = msg.status.text;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 770,
+        "y": 1480,
+        "wires": [
+            [
+                "829c8dbc.0008d",
+                "ad815a01.16a668"
+            ]
+        ]
+    },
+    {
+        "id": "e2cd2e55.14ed8",
+        "type": "link in",
+        "z": "d93a2589.2e6c78",
+        "name": "Modbus + HTTP",
+        "links": [
+            "19b5ca73.2721d6"
+        ],
+        "x": 155,
+        "y": 240,
+        "wires": [
+            [
+                "ace60965.062c28"
+            ]
+        ]
+    },
+    {
+        "id": "63cc8aa8.e3dbf4",
+        "type": "function",
+        "z": "2b7a79b2.a62516",
+        "name": "Unit 2",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    'meterid': '1000',    ENECTIVA IMPORT ID\n//    'suit': '0',          ENECTIVA SUIT\n//    'protocol':'modbus',  PROTOCOL (modbus/mbus)\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 4, \n    'unitid': 2, \n    'address': 158, \n    'quantity': 2,\n    'value': { \n        'datatype': 'int32', \n        'meterid': 73130497,\n        'unit': \"m3\"\n    }\n} \n\n// msg.payload.value = { 'datatype': 'float', 'meterid': 73130497,};\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 160,
+        "wires": [
+            [
+                "d02ac851.7967e8"
+            ]
+        ]
+    },
+    {
+        "id": "3d141242.fccffe",
+        "type": "inject",
+        "z": "2b7a79b2.a62516",
+        "name": "CRON 10 minutes",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "*/10 0-23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "63cc8aa8.e3dbf4",
+                "12dd5077.ad1e9"
+            ]
+        ]
+    },
+    {
+        "id": "12dd5077.ad1e9",
+        "type": "function",
+        "z": "2b7a79b2.a62516",
+        "name": "Unit 2",
+        "func": "// { \n//     'fc': 4,                     FUNCTION CODE\n//     'unitid': 2,                 UNIT ID (Address on the bus)\n//     'address': 23,               STARTING REGISTER\n//     'quantity': 2,               NUMBER OF REGISTERS TO READ\n//     'value': { \n//         'datatype': 'float',     DATA TYPE\n//         'meterid': 123,          METER ID USED IN ENECTIVA\n//     }\n// } \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 4, \n    'unitid': 2, \n    'address': 23, \n    'quantity': 2,\n    'value': { \n        'datatype': 'float', \n        'meterid': 123,\n    }\n} \n\n// msg.payload.value = { 'datatype': 'float', 'meterid': 73130497,};\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 120,
+        "wires": [
+            [
+                "d02ac851.7967e8"
+            ]
+        ]
+    },
+    {
+        "id": "19b5ca73.2721d6",
+        "type": "link out",
+        "z": "2b7a79b2.a62516",
+        "name": "",
+        "links": [
+            "e2cd2e55.14ed8"
+        ],
+        "x": 920,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "4d4ae29.0472b1c",
+        "type": "link in",
+        "z": "f2965746.30b818",
+        "name": "Modbus + MQTT",
+        "links": [
+            "6fe59db0.02b7d4"
+        ],
+        "x": 155,
+        "y": 100,
+        "wires": [
+            [
+                "39ba2d2.9d0cad2"
+            ]
+        ]
+    },
+    {
+        "id": "dad3c0df.e472a",
+        "type": "function",
+        "z": "2b7a79b2.a62516",
+        "name": "Unit 1",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    'meterid': '1000',    ENECTIVA IMPORT ID\n//    'suit': '0',          ENECTIVA SUIT\n//    'protocol':'modbus',  PROTOCOL (modbus/mbus)\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 3, \n    'unitid': 1, \n    'address': 8320, \n    'quantity': 2,\n    'value': { \n        'datatype': 'float', \n        'meterid': 18070292,\n    }\n} \n\n// msg.payload.value = { 'datatype': 'float', 'meterid': 73130497,};\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 400,
+        "wires": [
+            [
+                "c3b25da.98772a"
+            ]
+        ]
+    },
+    {
+        "id": "370b02db.738b7e",
+        "type": "inject",
+        "z": "2b7a79b2.a62516",
+        "name": "seconds",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "x": 180,
+        "y": 400,
+        "wires": [
+            [
+                "dad3c0df.e472a"
+            ]
+        ]
+    },
+    {
+        "id": "6fe59db0.02b7d4",
+        "type": "link out",
+        "z": "2b7a79b2.a62516",
+        "name": "",
+        "links": [
+            "4d4ae29.0472b1c"
+        ],
+        "x": 915,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "c25c90e9.d53fa",
+        "type": "comment",
+        "z": "2b7a79b2.a62516",
+        "name": "HTTP",
+        "info": "",
+        "x": 1050,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "effea48.99c8c58",
+        "type": "comment",
+        "z": "2b7a79b2.a62516",
+        "name": "MQTT",
+        "info": "",
+        "x": 1050,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "7356f1bc.5ef2e",
+        "type": "debug",
+        "z": "2b7a79b2.a62516",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 950,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "d02ac851.7967e8",
+        "type": "function",
+        "z": "2b7a79b2.a62516",
+        "name": "pass",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 790,
+        "y": 120,
+        "wires": [
+            [
+                "19b5ca73.2721d6",
+                "7356f1bc.5ef2e"
+            ]
+        ]
+    },
+    {
+        "id": "c3b25da.98772a",
+        "type": "function",
+        "z": "2b7a79b2.a62516",
+        "name": "pass",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 790,
+        "y": 400,
+        "wires": [
+            [
+                "e76bfe7b.11b0e",
+                "6fe59db0.02b7d4"
+            ]
+        ]
+    },
+    {
+        "id": "e76bfe7b.11b0e",
+        "type": "debug",
+        "z": "2b7a79b2.a62516",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 950,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "8c7803e4.76711",
+        "type": "comment",
+        "z": "a1569260.60935",
+        "name": "Reboot. USAGE: send anything to specified topic",
+        "info": "",
+        "x": 280,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "a7f06be4.1eddd8",
+        "type": "inject",
+        "z": "a1569260.60935",
+        "name": "Config after strartup",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0",
+        "x": 200,
+        "y": 60,
+        "wires": [
+            [
+                "ac2384df.3a5e58"
+            ]
+        ]
+    },
+    {
+        "id": "ac2384df.3a5e58",
+        "type": "function",
+        "z": "a1569260.60935",
+        "name": "",
+        "func": "global.set('cust_uuid','1e93b77a-64df-42b1-844d-55d1e124a548');",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 490,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "86be2e6f.93d76",
+        "type": "comment",
+        "z": "a1569260.60935",
+        "name": "After startup config - UUID etc",
+        "info": "",
+        "x": 220,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "e7aaec57.055a5",
+        "type": "function",
+        "z": "a1569260.60935",
+        "name": "",
+        "func": "if (msg.payload.toLowerCase() == 'reboot') {\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 980,
+        "wires": [
+            [
+                "3bc27321.fc83bc"
+            ]
+        ]
+    }
+]
