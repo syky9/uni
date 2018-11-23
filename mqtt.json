@@ -1,0 +1,205 @@
+[
+    {
+        "id": "3bdeb4f1.e08d4c",
+        "type": "tab",
+        "label": "To read",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "378124c5.1cbfcc",
+        "type": "function",
+        "z": "3bdeb4f1.e08d4c",
+        "name": "Unit 2",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n//    'meterid': '1000',    ENECTIVA IMPORT ID\n//    'suit': '0',          ENECTIVA SUIT\n//    'protocol':'modbus',  PROTOCOL (modbus/mbus)\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 4, \n    'unitid': 2, \n    'address': 158, \n    'quantity': 2,\n    'value': { \n        'datatype': 'int32', \n        'meterid': 73130497,\n        'unit': \"m3\"\n    }\n} \n\n// msg.payload.value = { 'datatype': 'float', 'meterid': 73130497,};\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 160,
+        "wires": [
+            [
+                "4cffd359.2de14c"
+            ]
+        ]
+    },
+    {
+        "id": "95ccc1dc.b7595",
+        "type": "inject",
+        "z": "3bdeb4f1.e08d4c",
+        "name": "CRON 10 minutes",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "*/10 0-23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "378124c5.1cbfcc",
+                "edd07b5c.9c2a28"
+            ]
+        ]
+    },
+    {
+        "id": "edd07b5c.9c2a28",
+        "type": "function",
+        "z": "3bdeb4f1.e08d4c",
+        "name": "Unit 2",
+        "func": "// { \n//     'fc': 4,                     FUNCTION CODE\n//     'unitid': 2,                 UNIT ID (Address on the bus)\n//     'address': 23,               STARTING REGISTER\n//     'quantity': 2,               NUMBER OF REGISTERS TO READ\n//     'value': { \n//         'datatype': 'float',     DATA TYPE\n//         'meterid': 123,          METER ID USED IN ENECTIVA\n//     }\n// } \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 4, \n    'unitid': 2, \n    'address': 23, \n    'quantity': 2,\n    'value': { \n        'datatype': 'float', \n        'meterid': 123,\n    }\n} \n\n// msg.payload.value = { 'datatype': 'float', 'meterid': 73130497,};\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 120,
+        "wires": [
+            [
+                "4cffd359.2de14c"
+            ]
+        ]
+    },
+    {
+        "id": "e516d51c.271478",
+        "type": "link out",
+        "z": "3bdeb4f1.e08d4c",
+        "name": "",
+        "links": [
+            "33d78418.3891fc"
+        ],
+        "x": 920,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7ea7f18d.3e9a",
+        "type": "function",
+        "z": "3bdeb4f1.e08d4c",
+        "name": "Unit 1",
+        "func": "//{ \n//    value: msg.payload, \n//    'fc': 4,              MODBUS FUNCTION CODE\n//    'unitid': 1,          MODBUS DEVICE ID\n//    'address': 0 ,        START ADDRESS OF THE REGISTER\n//    'quantity': 50        NUMBER OF REGISTERS TO READ\n    // 'value': { \n    //     'datatype': 'float',         DATA TYPE 'float'/'int32'\n    //     'meterid': 18070292,         IDENTIFICATION FOR ENECTIVA\n    //     'point_type': 'data_point'   POINT TYPE 'data_point'/'reading' \n    // }\n//} \n// E.G. Eastron SDM630 has actual power on address 30053 (or 0x34) - therefore the address is 52\n\nmsg.payload = \n{ \n    'fc': 3, \n    'unitid': 1, \n    'address': 8320, \n    'quantity': 2,\n    'value': { \n        'datatype': 'float', \n        'meterid': 18070292,\n        'point_type': 'data_point'\n    }\n} \n\n// msg.payload.value = { 'datatype': 'float', 'meterid': 73130497,};\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 400,
+        "wires": [
+            [
+                "3e1a21fa.74649e"
+            ]
+        ]
+    },
+    {
+        "id": "3c0825f2.98011a",
+        "type": "inject",
+        "z": "3bdeb4f1.e08d4c",
+        "name": "seconds",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "x": 140,
+        "y": 400,
+        "wires": [
+            [
+                "7ea7f18d.3e9a"
+            ]
+        ]
+    },
+    {
+        "id": "38512107.7bc6fe",
+        "type": "link out",
+        "z": "3bdeb4f1.e08d4c",
+        "name": "",
+        "links": [
+            "4e2738a2.d7bf28",
+            "402848a3.8658a8"
+        ],
+        "x": 915,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "7960d104.693bc",
+        "type": "comment",
+        "z": "3bdeb4f1.e08d4c",
+        "name": "HTTP",
+        "info": "",
+        "x": 1050,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "2df8cc25.a03dd4",
+        "type": "comment",
+        "z": "3bdeb4f1.e08d4c",
+        "name": "MQTT",
+        "info": "",
+        "x": 1050,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "1a9b10ad.fc7f7f",
+        "type": "debug",
+        "z": "3bdeb4f1.e08d4c",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 950,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4cffd359.2de14c",
+        "type": "function",
+        "z": "3bdeb4f1.e08d4c",
+        "name": "pass",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 790,
+        "y": 120,
+        "wires": [
+            [
+                "e516d51c.271478",
+                "1a9b10ad.fc7f7f"
+            ]
+        ]
+    },
+    {
+        "id": "3e1a21fa.74649e",
+        "type": "function",
+        "z": "3bdeb4f1.e08d4c",
+        "name": "pass",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 790,
+        "y": 400,
+        "wires": [
+            [
+                "b80f1db.772cee",
+                "38512107.7bc6fe"
+            ]
+        ]
+    },
+    {
+        "id": "b80f1db.772cee",
+        "type": "debug",
+        "z": "3bdeb4f1.e08d4c",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 950,
+        "y": 440,
+        "wires": []
+    }
+]
